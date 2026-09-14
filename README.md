@@ -10,7 +10,6 @@ Phase 2 (Journal):
 - It is preferred practice because it highlights the difference between public and private encapsulations.
 
 Phase 3 (Journal):
-If you had stored isLegendary as a separate boolean field instead of calculating it inside the method, what steps would you have to take every time defenseRating changed? What risks does storing derived data create?
 - If you store isLegendary as a separate boolean field instead of calculating it from defenseRating on demand, you'd introduce data synchronization to responsibilities and risks.
 - DefenseRating changes: Detect the change, Recalculate isLegendary, Update the stored field and Ensure all update paths are covered
 - Risks of storing derived data: Data inconsistency, Increased maintenance complexity, Harder debugging, Redundant storage, Risk of stale data in distributed systems in multi-server or cached environments, one copy of the data might be updated while another is not.
