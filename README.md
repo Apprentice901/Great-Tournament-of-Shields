@@ -13,3 +13,8 @@ Phase 3 (Journal):
 - If you store isLegendary as a separate boolean field instead of calculating it from defenseRating on demand, you'd introduce data synchronization to responsibilities and risks.
 - DefenseRating changes: Detect the change, Recalculate isLegendary, Update the stored field and Ensure all update paths are covered
 - Risks of storing derived data: Data inconsistency, Increased maintenance complexity, Harder debugging, Redundant storage, Risk of stale data in distributed systems in multi-server or cached environments, one copy of the data might be updated while another is not.
+
+Phase 4 (Journal): 
+- In Java, private means private to the class, not to the specific object instance. That’s why in your Guardian class, if opponent is also a Guardian (or any instance of the same class), your method can directly access opponent.defenseRating even though it’s marked private.
+- Pro's: Encapsulation, Validation / Transformation, API Consistency and Future-proofing.
+- Con's: Slight Performance Overhead, Verbosity and Potential for Unintended Behavior.
